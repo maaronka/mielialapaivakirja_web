@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<%- include('./partials/top'); -%>
+        <h1>Mielialapäiväkirja</h1>
+        <ul>
+            <li class="splash" id="color3"><a href="/submit"><h2>Tee merkintä</h2></a><p>Viimeisin merkintä: <%= latest.date.slice(8) -%>.<%= latest.date.slice(5, 7) -%>.<%= latest.date.slice(0, 4) -%> klo <%= latest.moods[latest.moods.length - 1].time.slice(0, 5) -%></p></li>
+            <li class="splash" id="color4"><a href="/search"><h2>Katso merkintöjä</h2></a></li>
+            <li class="splash" id="color2"><a href="/logout"><h2>Kirjaudu ulos</h2></a></li>
+        </ul>
+        <script>
+            checkLatest();
+        </script>
+<%- include('./partials/bottom'); -%>

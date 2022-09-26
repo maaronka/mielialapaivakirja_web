@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<%- include('./partials/top'); -%>
+        <h1>Hakutulokset</h1>
+        <div id="resultsholder">
+            <% if (results.length > 0) {%>
+                <% results.forEach(function(result) { %>
+                    <h2><%- result.date.slice(8) -%>.<%- result.date.slice(5, 7) -%>.<%- result.date.slice(0, 4) -%></h2>
+                    <div class="dateholder">
+                        <% result.moods.forEach(function(mood) { %>
+                            <div class="stamp <%- mood.mood -%>">
+                                <p><%- mood.time -%></p>
+                            </div>
+                        <% }) %>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p class="basic">Valitsemallasi aikavälillä ei ole merkintöjä</p>
+            <% } %>
+        </div> <!-- /resultsholder -->
+        <div id="btnholder">
+            <button id="button" onclick="home()">&check;</button>
+        </div>
+<%- include('./partials/bottom') -%>

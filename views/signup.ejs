@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<%- include('./partials/top'); -%>
+        <h1>Luo käyttäjätunnus</h1>
+        <p class="basic"><%= message %></p>
+        <form name="userForm" action="/signup" method="post" onsubmit="return validateForm()">
+            <input type="text" name="username" class="color3" placeholder="Anna käyttäjätunnus">
+            <br>
+            <input type="password" name="password" class="color4" placeholder="Anna salasana">
+            <div id="btnholder">
+                <button type="submit" id="button">&check;</button>
+            </div>
+        </form>
+        <p class="basic">Onko sinulla jo käyttäjätunnus? <a href="/login">Kirjaudu sisään</a>.</p>
+<%- include('./partials/bottom'); -%>

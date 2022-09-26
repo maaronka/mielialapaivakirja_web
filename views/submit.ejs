@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<%- include('./partials/top'); -%>
+        <div class="position">
+            <div class="holder" id="holder">
+                <ul>
+                    <li class="circle" id="color1" onclick="createJson('color1')"><a href="#"><span>>x|</span></a></li>
+                    <li class="circle" id="color2" onclick="createJson('color2')"><a href="#"><span>>:/</span></a></li>
+                    <li class="circle" id="color3" onclick="createJson('color3')"><a href="#"><span>:D</span></a></li>
+                    <li class="circle" id="color4" onclick="createJson('color4')"><a href="#"><span>:)</span></a></li>
+                    <li class="circle" id="color5" onclick="createJson('color5')"><a href="#"><span>:(</span></a></li>
+                    <li class="circle" id="color6" onclick="createJson('color6')"><a href="#"><span>x|</span></a></li>
+                    <li class="circle" id="color7" onclick="createJson('color7')"><a href="#"><span>Dx</span></a></li>
+                    <li class="circle" id="color8" onclick="createJson('color8')"><a href="#"><span>:|</span></a></li>
+                </ul>
+                <div class="cover">
+                    <h2>Mikä fiilis?</h2>
+                </div>
+            </div> <!-- / holder -->
+            <div class="plusholder">
+                <button id="keywords" title="Anna lisätietoja" disabled>+</button>
+            </div>
+        </div>
+        <div id="btnholder">
+            <button id="button" onclick="button('/submit')" disabled>&check;</button>
+        </div>
+        <div id="keywordsModal" class="modal">
+            <div class="modal-content">
+                <div class="form">
+                    <label for="moodName">Fiilis:</label>
+                    <input type="text" name="moodName" id="moodName">
+                    <label for="more">Avainsanat:</label>
+                    <input type="text" name="more" id="more" placeholder="Anna lisätietoja">
+                    <button class="button" onclick="addKeywords()">&check;</button>
+                </div>
+            </div>
+        </div>
+        <script src="/javascript/mood.js"></script>
+<%- include('./partials/bottom'); -%>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<%- include('./partials/top'); -%>
+        <h1 id="h1">Valitse päivämäärät</h1>
+        <div id="resultsholder">
+            <h2 class="calendarheader">Aloituspäivämäärä</h2>
+            <div id="startdate" class="calendar">
+                <select class="month" name="startMonth" id="startMonth" oninput="showCalendar('start')">
+                </select>
+                <table class="dates">
+                    <thead>
+                        <tr>
+                            <th>Ma</th>
+                            <th>Ti</th>
+                            <th>Ke</th>
+                            <th>To</th>
+                            <th>Pe</th>
+                            <th>La</th>
+                            <th>Su</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendar-body-start">
+
+                    </tbody>
+                </table>
+            </div> <!-- /startdate -->
+            <h2 class="calendarheader">Lopetuspäivämäärä</h2>
+            <div id="enddate" class="calendar">
+                <select class="month" name="endMonth" id="endMonth" oninput="javascript:showCalendar('end')">
+                </select>
+                <table class="dates">
+                    <thead>
+                        <tr>
+                            <th>Ma</th>
+                            <th>Ti</th>
+                            <th>Ke</th>
+                            <th>To</th>
+                            <th>Pe</th>
+                            <th>La</th>
+                            <th>Su</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendar-body-end">
+
+                    </tbody>
+                </table>
+            </div> <!-- /enddate -->
+        </div> <!-- /resultsholder -->
+        <div id="resultsModal" class="modal">
+            <div id="modal-content" class="modal-content">
+                <p>Avainsanat:</p>
+                <div id="modal-keywords"></div>
+            </div>
+        </div>
+        <div id="btnholder">
+            <button id="button" onclick="showDetails()" disabled>&check;</button>
+        </div>
+        <div id="hidden"><% results.forEach(function(result) { %>
+            <p class="result"><%= result.date -%></p>
+            <div id="<%= result.date -%>" class="content"><% result.moods.forEach(function(mood) { %>
+                <div class="moods">
+                    <p class="array"><% mood.keywords.forEach(function(keyword) { %>
+                        <span class="<%=result.date-%>T<%=mood.time-%>"><%= keyword -%></span><% }) %></p>
+                    <p class="array"><%= mood.time -%></p>
+                    <p class="array"><%= mood.mood -%></p>
+                </div><% }) %>
+            </div>
+            <% }); %>
+        </div> <!-- /hidden -->
+        <script src="/javascript/calendar2.js"></script>
+<%- include('./partials/bottom'); -%>

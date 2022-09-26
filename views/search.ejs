@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<%- include('./partials/top'); -%>
+        <h1>Valitse päivämäärät</h1>
+        <h2>Aloituspäivämäärä</h2>
+        <div id="startdate" class="calendar">
+            <select class="month" name="startMonth" id="startMonth">
+                <option value="2020-02" selected onclick="showCalendar('2020-02', 'start')">Helmikuu 2020</option>
+                <option value="2020-03" onclick="showCalendar('2020-03', 'start')">Maaliskuu 2020</option>
+                <option value="2020-04" onclick="showCalendar('2020-04', 'start')">Huhtikuu 2020</option>
+                <option value="2020-05" onclick="showCalendar('2020-05', 'start')">Toukokuu 2020</option>
+            </select>
+            <table class="dates">
+                <thead>
+                    <tr>
+                        <th>Ma</th>
+                        <th>Ti</th>
+                        <th>Ke</th>
+                        <th>To</th>
+                        <th>Pe</th>
+                        <th>La</th>
+                        <th>Su</th>
+                    </tr>
+                </thead>
+                <tbody id="calendar-body-start">
+
+                </tbody>
+            </table>
+        </div> <!-- /startdate -->
+        <h2>Lopetuspäivämäärä</h2>
+        <div id="enddate" class="calendar">
+            <select class="month" name="endMonth" id="endMonth">
+                <option value="2020-02" onclick="showCalendar('2020-02', 'end');">Helmikuu 2020</option>
+                <option value="2020-03" onclick="showCalendar('2020-03', 'end');">Maaliskuu 2020</option>
+                <option value="2020-04" onclick="showCalendar('2020-04', 'end');">Huhtikuu 2020</option>
+                <option value="2020-05" selected onclick="showCalendar('2020-05', 'end');">Toukokuu 2020</option>
+            </select>
+            <table class="dates">
+                <thead>
+                    <tr>
+                        <th>Ma</th>
+                        <th>Ti</th>
+                        <th>Ke</th>
+                        <th>To</th>
+                        <th>Pe</th>
+                        <th>La</th>
+                        <th>Su</th>
+                    </tr>
+                </thead>
+                <tbody id="calendar-body-end">
+
+                </tbody>
+            </table>
+        </div> <!-- /enddate -->
+        <div id="btnholder">
+            <button id="button" onclick="showResults('/results')" disabled>&check;</button>
+        </div>
+        <script src="/javascript/calendar.js"></script>
+<%- include('./partials/bottom'); -%>
